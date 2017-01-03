@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import AudioPlayer from './AudioPlayer.js';
-import {Link} from 'react-router';
+import AudioPlayer from './AudioPlayer.js'
+import LetterA from './AlphabetSoup.js'
 require('unique-random-array')
 
-class App extends Component {
+export default class LevelOne extends Component {
   constructor() {
     super();
     this.state = {
@@ -26,21 +25,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <div className="navDiv">
-          <ul className="nav">
-            <li className="navItem"><Link to={'/1'}>Level One</Link></li>
-            <li className="navItem"><Link to={'/2'}>Level Two</Link></li>
-          </ul>
-        </div>
-          {this.props.children}
+      <div>
+        <h1>This is level one</h1>
+        <audio controls>
+          <source src="http://phonicsaudiofiles.s3.amazonaws.com/goodwork.mp3" type="audio/mpeg" />
+        </audio>
+        <br/>
+        <button onClick={this.onChangeSound.bind(this)}>New Sound</button>
+        <br/>
+        <AudioPlayer src={this.state.soundLink}></AudioPlayer>
+        <br/>
+        {this.props.children}
       </div>
     );
   }
 }
-
-export default App;
