@@ -6,7 +6,6 @@ import NoMatch from './NoMatch'
 import LevelOne from './LevelOne'
 import LevelTwo from './LevelTwo'
 import LetterA from './AlphabetSoup'
-import ExampleContainer from './ExampleContainer'
 
 import './index.css';
 
@@ -17,7 +16,6 @@ ReactDOM.render(
       <Route path="1" component={LevelOne} />
       <Route path="2" component={LevelTwo} />
       <Route path="*" component={NoMatch} />
-      <Route path="example" component={ExampleContainer} />
     </Route>
 
   </Router>,

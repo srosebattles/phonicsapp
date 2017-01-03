@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import AudioPlayer from './AudioPlayer.js'
 import LetterA from './AlphabetSoup.js'
+import ExampleContainer from './ExampleContainer'
 require('unique-random-array')
 
 export default class LevelOne extends Component {
@@ -35,7 +36,7 @@ export default class LevelOne extends Component {
         <br/>
         <AudioPlayer src={this.state.soundLink}></AudioPlayer>
         <br/>
-        {this.props.children}
+        <ExampleContainer />
       </div>
     );
   }
