@@ -5,7 +5,6 @@ import App from './App';
 import NoMatch from './NoMatch'
 import LevelOne from './LevelOne'
 import LevelTwo from './LevelTwo'
-import LetterA from './AlphabetSoup'
 
 import './index.css';
 

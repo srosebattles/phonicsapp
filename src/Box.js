@@ -37,24 +37,25 @@ function collect(connect, monitor) {
   }
 }
 
-export default class Box extends Component {
-  static propTypes = {
-    connectDragSource: PropTypes.func.isRequired,
-    isDragging: PropTypes.bool.isRequired,
-    name: PropTypes.string.isRequired
-  };
+class Box extends Component {
 
   render() {
     const { isDragging, connectDragSource } = this.props;
     const { name } = this.props;
     const opacity = isDragging ? 0.4 : 1;
 
-    return (
-      connectDragSource(
+    return connectDragSource(
         <div style={{ ...style, opacity }}>
           {name}
         </div>
-      )
     );
   }
 }
+
+Box.propTypes = {
+  connectDragSource: PropTypes.func.isRequired,
+  isDragging: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired
+};
+
+export default DragSource(ItemTypes.BOX, boxSource, collect)(Box)

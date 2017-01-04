@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import AudioPlayer from './AudioPlayer.js'
-import LetterA from './AlphabetSoup.js'
 import ExampleContainer from './ExampleContainer'
 require('unique-random-array')
 
