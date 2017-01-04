@@ -29,11 +29,6 @@ function collect(connect, monitor) {
 }
 
 class TargetBin extends Component {
-  static propTypes = {
-    connectDropTarget: PropTypes.func.isRequired,
-    isOver: PropTypes.bool.isRequired,
-    canDrop: PropTypes.bool.isRequired
-  };
 
   render() {
     const { canDrop, isOver, connectDropTarget } = this.props;
@@ -56,5 +51,11 @@ class TargetBin extends Component {
     );
   }
 }
+
+TargetBin.propTypes = {
+  connectDropTarget: PropTypes.func.isRequired,
+  isOver: PropTypes.bool.isRequired,
+  canDrop: PropTypes.bool.isRequired
+};
 
 export default DropTarget(ItemTypes.BOX, boxTarget, collect)(TargetBin)
