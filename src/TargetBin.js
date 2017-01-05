@@ -31,7 +31,7 @@ function collect(connect, monitor) {
 class TargetBin extends Component {
 
   render() {
-    const { canDrop, isOver, connectDropTarget } = this.props;
+    const { canDrop, isOver, connectDropTarget, lastDroppedItem } = this.props;
     const isActive = canDrop && isOver;
 
     let backgroundColor = '#222';
@@ -47,6 +47,10 @@ class TargetBin extends Component {
           'Release to drop' :
           'Drag a box here'
         }
+
+        {lastDroppedItem &&
+          <p>'Last dropped:' {JSON.stringify(lastDroppedItem)}</p>
+        }
       </div>
     );
   }
@@ -55,7 +59,8 @@ class TargetBin extends Component {
 TargetBin.propTypes = {
   connectDropTarget: PropTypes.func.isRequired,
   isOver: PropTypes.bool.isRequired,
-  canDrop: PropTypes.bool.isRequired
+  canDrop: PropTypes.bool.isRequired,
+  lastDroppedItem: PropTypes.object,
 };
 
 export default DropTarget(ItemTypes.BOX, boxTarget, collect)(TargetBin)
