@@ -40,13 +40,16 @@ function collect(connect, monitor) {
 class Box extends Component {
 
   render() {
-    const { isDragging, connectDragSource } = this.props;
+    const { isDropped, isDragging, connectDragSource } = this.props;
     const { name } = this.props;
     const opacity = isDragging ? 0.4 : 1;
 
     return connectDragSource(
         <div style={{ ...style, opacity }}>
-          {name}
+        {isDropped ?
+          <s>{name}</s> :
+          name
+        }
         </div>
     );
   }
@@ -55,7 +58,8 @@ class Box extends Component {
 Box.propTypes = {
   connectDragSource: PropTypes.func.isRequired,
   isDragging: PropTypes.bool.isRequired,
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  isDropped: PropTypes.bool.isRequired
 };
 
 export default DragSource(ItemTypes.BOX, boxSource, collect)(Box)

@@ -3,6 +3,7 @@ import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import TargetBin from './TargetBin';
 import Box from './Box';
+import ItemTypes from './ItemTypes'
 import update from 'react/lib/update';
 
 class ExampleContainer extends Component {
@@ -10,7 +11,7 @@ class ExampleContainer extends Component {
     super(props);
     this.state = {
       targetbins: [
-        { lastDroppedItem: null }
+        {accepts: [ItemTypes.BOX], lastDroppedItem: null }
       ],
       boxes: [
         { name: "s" },
@@ -37,8 +38,8 @@ class ExampleContainer extends Component {
         </div>
         <div style={{ overflow: 'hidden', clear: 'both' }}>
           {boxes.map(({ name, type }, index) =>
-            <Box  name={name}
-                  isDropped={this.isDropped(name)}
+            <Box name={name}
+            //isDropped goes here
                   key={index} />
              )}
         </div>
@@ -49,7 +50,7 @@ class ExampleContainer extends Component {
   handleDrop(index, item) {
   const { name } = item;
 
-  this.setState(update(this.state, {
+  this.setState({
     dustbins: {
       [index]: {
         lastDroppedItem: {
@@ -60,8 +61,8 @@ class ExampleContainer extends Component {
     droppedBoxNames: name ? {
       $push: [name]
     } : {}
-  }));
-}
-}
+  });
+  }
+  }
 
 export default DragDropContext(HTML5Backend)(ExampleContainer);
