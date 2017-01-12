@@ -8,7 +8,8 @@ export default class LevelOne extends Component {
   constructor() {
     super();
     this.state = {
-      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3"
+      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3",
+      answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3"
     }
   }
 

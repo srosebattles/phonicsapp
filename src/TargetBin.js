@@ -12,27 +12,36 @@ const style = {
   textAlign: 'center',
   fontSize: '1rem',
   lineHeight: 'normal',
+  float: 'left'
 };
 
-const boxTarget = {
-  drop() {
-    return { name: 'TargetBin' };
+const binTarget = {
+  // How should we proceed when a component is dropped in this bin?
+  drop(props, monitor) {
+    // Call the dropped component's onDrop prop, passing it the item
+    props.onDrop(monitor.getItem());
   }
 };
 
-function collect(connect, monitor) {
-  return {
-    connectDropTarget: connect.dropTarget(),
-    isOver: monitor.isOver(),
-    canDrop: monitor.canDrop()
-  }
-}
-
-class TargetBin extends Component {
-
+// Tell react dnd that the TargetBin component is a target
+// and pass it a config of what to do when something is dropped,
+// what types to accept, etc.
+@DropTarget(props => props.accepts, binTarget, (connect, monitor) => ({
+  connectDropTarget: connect.dropTarget(),
+  isOver: monitor.isOver(),
+  canDrop: monitor.canDrop()
+}))
+export default class TargetBin extends Component {
+  static propTypes = {
+    connectDropTarget: PropTypes.func.isRequired,
+    isOver: PropTypes.bool.isRequired,
+    canDrop: PropTypes.bool.isRequired,
+    lastDroppedItem: PropTypes.object,
+    onDrop: PropTypes.func.isRequired
+};
   render() {
-    const { canDrop, isOver, connectDropTarget, lastDroppedItem } = this.props;
-    const isActive = canDrop && isOver;
+    const { accepts, isOver, canDrop, connectDropTarget, lastDroppedItem } = this.props;
+    const isActive = isOver && canDrop;
 
     let backgroundColor = '#222';
     if (isActive) {
@@ -43,24 +52,10 @@ class TargetBin extends Component {
 
     return connectDropTarget(
       <div style={{ ...style, backgroundColor }}>
-        {isActive ?
-          'Release to drop' :
-          'Drag a box here'
-        }
-
         {lastDroppedItem &&
-          <p>'Last dropped:' {JSON.stringify(lastDroppedItem)}</p>
+          <p>{lastDroppedItem.name}</p>
         }
       </div>
     );
   }
 }
-
-TargetBin.propTypes = {
-  connectDropTarget: PropTypes.func.isRequired,
-  isOver: PropTypes.bool.isRequired,
-  canDrop: PropTypes.bool.isRequired,
-  lastDroppedItem: PropTypes.object,
-};
-
-export default DropTarget(ItemTypes.BOX, boxTarget, collect)(TargetBin)
