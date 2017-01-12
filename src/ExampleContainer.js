@@ -23,7 +23,8 @@ export default class ExampleContainer extends Component {
         { name: 'p', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundP.mp3'},
         { name: 'n', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundN.mp3'}
       ],
-      droppedBoxNames: []
+      droppedBoxNames: [],
+      answerShouldBe: 'http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3'
     };
   }
 
@@ -40,10 +41,11 @@ export default class ExampleContainer extends Component {
           )}
         </div>
         <div style={{ overflow: 'hidden', clear: 'both' }}>
-          {boxes.map(({ name, type }, index) =>
+          {boxes.map(({ name, type, origin }, index) =>
             <Box name={name}
                  type={type}
-                 isDropped={this.isDropped.bind(this, name)}
+                 origin={origin}
+                 isDropped={this.isDropped.bind(this, name, origin)}
                  key={index} />
           )}
         </div>
@@ -54,10 +56,7 @@ export default class ExampleContainer extends Component {
 
   handleDrop(index, item) {
     // console.log('I received ', item.name);
-    this.setState(update(this.state, {
-
-    }));
-    const { name } = item;
+    const { name, origin } = item;
     console.log(item)
     this.setState(update(this.state,{
        targetbins: {
@@ -72,7 +71,6 @@ export default class ExampleContainer extends Component {
         } : {}
     }));
   }
-
 
   isDropped(name) {
     console.log('I was dropped', name);
