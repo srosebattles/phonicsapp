@@ -15,10 +15,11 @@ const style = {
 const boxSource = {
   beginDrag(props) {
     return {
-      name: props.name
+      name: props.name,
+      origin: props.origin
     };
   }
-  
+
 };
 
 @DragSource(props => props.type, boxSource, (connect, monitor) => ({

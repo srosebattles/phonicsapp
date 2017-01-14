@@ -57,7 +57,7 @@ export default class ExampleContainer extends Component {
   handleDrop(index, item) {
     // console.log('I received ', item.name);
     const { name, origin } = item;
-    console.log(item)
+    console.log(item.name, item.origin)
     this.setState(update(this.state,{
        targetbins: {
          [index]: {
@@ -68,8 +68,10 @@ export default class ExampleContainer extends Component {
       },
         droppedBoxNames: name ? {
           $push: [name]
-        } : {}
+        } : {},
+        answerShouldBe: {$set: item.origin}
     }));
+    console.log(this.state.answerShouldBe)
   }
 
   isDropped(name) {
