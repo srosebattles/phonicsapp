@@ -16,11 +16,12 @@ export default class LevelOne extends Component {
   onChangeSound(e) {
     var uniqueRandomArray = require('unique-random-array')
     var chosenSound = uniqueRandomArray(["shortA.mp3", "soundS.mp3","soundT.mp3","shortI.mp3", "soundP.mp3","soundN.mp3"])
-    console.log(chosenSound)
+    // console.log(chosenSound)
     var thisSound = chosenSound()
-    console.log(thisSound)
+    // console.log(thisSound)
     this.setState({
-      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/" + thisSound
+      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/" + thisSound,
+      answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/" + thisSound
     })
   }
 
@@ -28,10 +29,12 @@ export default class LevelOne extends Component {
     return (
       <div>
         <h1>This is level one</h1>
-        <audio controls>
+        <audio id="goodWork">
           <source src="http://phonicsaudiofiles.s3.amazonaws.com/goodwork.mp3" type="audio/mpeg" />
         </audio>
-        <br/>
+        <audio id="tryAgain">
+          <source src="http://phonicsaudiofiles.s3.amazonaws.com/tryagain.mp3" type="audio/mpeg" />
+        </audio>
         <button onClick={this.onChangeSound.bind(this)}>New Sound</button>
         <br/>
         <AudioPlayer src={this.state.soundLink}></AudioPlayer>

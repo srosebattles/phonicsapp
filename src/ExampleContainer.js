@@ -5,6 +5,7 @@ import TargetBin from './TargetBin';
 import Box from './Box';
 import ItemTypes from './ItemTypes';
 import update from 'react/lib/update';
+import LevelOne from './LevelOne'
 
 
 @DragDropContext(HTML5Backend)
@@ -24,7 +25,8 @@ export default class ExampleContainer extends Component {
         { name: 'n', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundN.mp3'}
       ],
       droppedBoxNames: [],
-      answerShouldBe: 'http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3'
+      answerShouldBe: 'http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3',
+      userAnswer: ''
     };
   }
 
@@ -55,9 +57,8 @@ export default class ExampleContainer extends Component {
   }
 
   handleDrop(index, item) {
-    // console.log('I received ', item.name);
     const { name, origin } = item;
-    console.log(item.name, item.origin)
+    // console.log(item.name, item.origin)
     this.setState(update(this.state,{
        targetbins: {
          [index]: {
@@ -69,12 +70,24 @@ export default class ExampleContainer extends Component {
         droppedBoxNames: name ? {
           $push: [name]
         } : {},
-        answerShouldBe: {$set: item.origin}
+        userAnswer: {$set: item.origin}
     }));
-    console.log(this.state.answerShouldBe)
+    // console.log(this.state.userAnswer)
+    console.log(this.state.soundLink)
+    this.checkIfCorrect();
   }
 
   isDropped(name) {
     console.log('I was dropped', name);
+  }
+
+  checkIfCorrect() {
+    if (this.state.userAnswer == this.state.answerShouldBe) {
+      console.log("Winner winner chicken dinner")
+      document.getElementById("goodWork").play();
+    } else {
+      console.log("I am sad. You made me sad.")
+      document.getElementById("tryAgain").play();
+    }
   }
 }
