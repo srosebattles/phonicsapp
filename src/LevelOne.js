@@ -10,7 +10,7 @@ export default class LevelOne extends Component {
     this.state = {
       soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3",
       answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3",
-      chosenSound: uniqueRandomArray(["shortA.mp3", "soundS.mp3","soundT.mp3","shortI.mp3", "soundP.mp3","soundN.mp3"])
+      chosenSound: uniqueRandomArray(["shortA.mp3", "soundS.mp3","soundT.mp3","shortI.mp3", "soundP.mp3"])
     }
   }
 
