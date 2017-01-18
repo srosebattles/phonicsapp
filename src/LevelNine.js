@@ -8,12 +8,12 @@ export default class LevelNine extends Component {
   constructor() {
     super();
     this.state = {
-      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3",
-      answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3",
-      chosenSound: uniqueRandomArray(["soundR.mp3", "soundH.mp3", "soundM.mp3","soundD.mp3"])
+      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundAI.mp3",
+      answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/soundAI.mp3",
+      chosenSound: uniqueRandomArray(["soundAI.mp3", "soundEE.mp3", "soundIE.mp3","soundUE.mp3"])
     }
   }
-
+//redo IE
   onChangeSound(e) {
     this.nextSound()
   }

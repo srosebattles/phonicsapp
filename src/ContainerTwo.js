@@ -16,7 +16,7 @@ export default class ContainerTwo extends Component {
         { accepts: [ItemTypes.BOX], lastDroppedItem: null },
       ],
       boxes: [
-        { name: 'n', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundN.mp3'}
+        { name: 'n', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundN.mp3'},
         { name: 'ck', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundCK.mp3' },
         { name: 'h', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundH.mp3' },
         { name: 'r', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3'},

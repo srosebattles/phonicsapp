@@ -8,12 +8,12 @@ export default class LevelFour extends Component {
   constructor() {
     super();
     this.state = {
-      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3",
-      answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3",
-      chosenSound: uniqueRandomArray(["soundR.mp3", "soundH.mp3", "soundM.mp3","soundD.mp3"])
+      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundL.mp3",
+      answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/soundL.mp3",
+      chosenSound: uniqueRandomArray(["soundL.mp3", "soundF.mp3", "soundJ.mp3","soundZ.mp3"])
     }
   }
-
+//Need to record B again
   onChangeSound(e) {
     this.nextSound()
   }

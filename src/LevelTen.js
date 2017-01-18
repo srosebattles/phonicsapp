@@ -8,9 +8,9 @@ export default class LevelTen extends Component {
   constructor() {
     super();
     this.state = {
-      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3",
-      answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3",
-      chosenSound: uniqueRandomArray(["soundR.mp3", "soundH.mp3", "soundM.mp3","soundD.mp3"])
+      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundAR.mp3",
+      answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/soundAR.mp3",
+      chosenSound: uniqueRandomArray(["soundAR.mp3", "soundOR.mp3", "soundER.mp3"])
     }
   }
 
