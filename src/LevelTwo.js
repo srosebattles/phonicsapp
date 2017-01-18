@@ -1,25 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
-import AudioPlayer from './AudioPlayer.js'
-require('unique-random-array')
+import AudioPlayer from './AudioPlayer.js';
+import ContainerTwo from './ContainerTwo';
+var uniqueRandomArray = require('unique-random-array');
 
 export default class LevelTwo extends Component {
   constructor() {
     super();
     this.state = {
-      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3"
+      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3",
+      answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3",
+      chosenSound: uniqueRandomArray(["soundR.mp3", "soundH.mp3", "soundM.mp3","soundD.mp3"])
     }
   }
 
   onChangeSound(e) {
-    var uniqueRandomArray = require('unique-random-array')
-    var chosenSound = uniqueRandomArray(["soundH.mp3","soundR.mp3","soundM.mp3","soundD.mp3"])
-    // record ck and e again
-    console.log(chosenSound)
-    var thisSound = chosenSound()
-    console.log(thisSound)
+    this.nextSound()
+  }
+
+  nextSound(){
+    // console.log("loading next sound")
+    var thisSound = this.state.chosenSound()
+     console.log(thisSound)
     this.setState({
-      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/" + thisSound
+      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/" + thisSound,
+      answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/" + thisSound
     })
   }
 
@@ -27,14 +32,18 @@ export default class LevelTwo extends Component {
     return (
       <div>
         <h1>This is level two</h1>
-        <audio controls>
+        <audio id="goodWork">
           <source src="http://phonicsaudiofiles.s3.amazonaws.com/goodwork.mp3" type="audio/mpeg" />
         </audio>
-        <br/>
+        <audio id="tryAgain">
+          <source src="http://phonicsaudiofiles.s3.amazonaws.com/tryagain.mp3" type="audio/mpeg" />
+        </audio>
         <button onClick={this.onChangeSound.bind(this)}>New Sound</button>
         <br/>
         <AudioPlayer src={this.state.soundLink}></AudioPlayer>
+        <br/>
+        <ContainerTwo nextSound={this.nextSound.bind(this)} answerShouldBe={this.state.answerShouldBe} />
       </div>
     );
   }
-}
+  }

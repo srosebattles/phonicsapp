@@ -5,11 +5,11 @@ import TargetBin from './TargetBin';
 import Box from './Box';
 import ItemTypes from './ItemTypes';
 import update from 'react/lib/update';
-import LevelOne from './LevelOne'
+import LevelTwo from './LevelTwo'
 
 
 @DragDropContext(HTML5Backend)
-export default class ExampleContainer extends Component {
+export default class ContainerTwo extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,16 +17,17 @@ export default class ExampleContainer extends Component {
         { accepts: [ItemTypes.BOX], lastDroppedItem: null },
       ],
       boxes: [
-        { name: 's', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundS.mp3' },
-        { name: 'a', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3' },
-        { name: 't', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundT.mp3'},
-        { name: 'i', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/shortI.mp3'},
-        { name: 'p', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundP.mp3'},
-        { name: 'n', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundN.mp3'}
+        { name: 'ck', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundCK.mp3' },
+        { name: 'h', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundH.mp3' },
+        { name: 'r', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3'},
+        { name: 'e', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/shortE.mp3'},
+        { name: 'm', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundM.mp3'},
+        { name: 'd', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundD.mp3'}
       ],
       droppedBoxNames: [],
-      answerShouldBe: 'http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3',
-      userAnswer: ''
+      answerShouldBe: 'http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3',
+      userAnswer: '',
+      totalCorrect: 0
     };
   }
 
@@ -57,6 +58,9 @@ export default class ExampleContainer extends Component {
                  isDropped={this.isDropped.bind(this, name, origin)}
                  key={index} />
           )}
+        </div>
+        <div>
+        <h3>You've gotten  {this.state.totalCorrect}  right! Good job!</h3>
         </div>
         {this.props.children}
       </div>
@@ -97,9 +101,21 @@ export default class ExampleContainer extends Component {
       // console.log("Winner winner chicken dinner")
       document.getElementById("goodWork").play();
       this.props.nextSound();
+      this.oneMoreCorrect();
     } else {
       // console.log("I am sad. You made me sad.")
       document.getElementById("tryAgain").play();
     }
+  }
+
+
+  oneMoreCorrect() {
+    var totalCorrect = this.state.totalCorrect
+    totalCorrect++
+    this.setState({
+      totalCorrect: totalCorrect
+    })
+    console.log("var " + totalCorrect)
+    console.log("state " + this.state.totalCorrect)
   }
 }

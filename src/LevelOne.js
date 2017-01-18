@@ -2,23 +2,26 @@ import React, { Component } from 'react';
 import './App.css';
 import AudioPlayer from './AudioPlayer.js'
 import ExampleContainer from './ExampleContainer'
-require('unique-random-array')
+var uniqueRandomArray = require('unique-random-array')
 
 export default class LevelOne extends Component {
   constructor() {
     super();
     this.state = {
       soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3",
-      answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3"
+      answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3",
+      chosenSound: uniqueRandomArray(["shortA.mp3", "soundS.mp3","soundT.mp3","shortI.mp3", "soundP.mp3","soundN.mp3"])
     }
   }
 
   onChangeSound(e) {
-    var uniqueRandomArray = require('unique-random-array')
-    var chosenSound = uniqueRandomArray(["shortA.mp3", "soundS.mp3","soundT.mp3","shortI.mp3", "soundP.mp3","soundN.mp3"])
-    // console.log(chosenSound)
-    var thisSound = chosenSound()
-    // console.log(thisSound)
+    this.nextSound()
+  }
+
+  nextSound(){
+    // console.log("loading next sound")
+    var thisSound = this.state.chosenSound()
+     console.log(thisSound)
     this.setState({
       soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/" + thisSound,
       answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/" + thisSound
@@ -39,7 +42,7 @@ export default class LevelOne extends Component {
         <br/>
         <AudioPlayer src={this.state.soundLink}></AudioPlayer>
         <br/>
-        <ExampleContainer />
+        <ExampleContainer nextSound={this.nextSound.bind(this)} answerShouldBe={this.state.answerShouldBe} />
       </div>
     );
   }
