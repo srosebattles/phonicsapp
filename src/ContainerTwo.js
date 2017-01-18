@@ -5,7 +5,6 @@ import TargetBin from './TargetBin';
 import Box from './Box';
 import ItemTypes from './ItemTypes';
 import update from 'react/lib/update';
-import LevelTwo from './LevelTwo'
 
 
 @DragDropContext(HTML5Backend)
@@ -97,7 +96,7 @@ export default class ContainerTwo extends Component {
   checkIfCorrect() {
     // console.log("guessed " + this.state.userAnswer)
     // console.log("real answer " + this.state.answerShouldBe)
-    if (this.state.userAnswer == this.state.answerShouldBe) {
+    if (this.state.userAnswer === this.state.answerShouldBe) {
       // console.log("Winner winner chicken dinner")
       document.getElementById("goodWork").play();
       this.props.nextSound();

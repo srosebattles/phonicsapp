@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react';
-import ItemTypes from './ItemTypes';
 import { DropTarget } from 'react-dnd';
 
 const style = {
@@ -40,7 +39,7 @@ export default class TargetBin extends Component {
     onDrop: PropTypes.func.isRequired
 };
   render() {
-    const { accepts, isOver, canDrop, connectDropTarget, lastDroppedItem } = this.props;
+    const { isOver, canDrop, connectDropTarget, lastDroppedItem } = this.props;
     const isActive = isOver && canDrop;
 
     let backgroundColor = '#222';
