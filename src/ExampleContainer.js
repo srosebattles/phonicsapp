@@ -25,7 +25,8 @@ export default class ExampleContainer extends Component {
       ],
       droppedBoxNames: [],
       answerShouldBe: 'http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3',
-      userAnswer: ''
+      userAnswer: '',
+      totalCorrect: 0
     };
   }
 
@@ -56,6 +57,9 @@ export default class ExampleContainer extends Component {
                  isDropped={this.isDropped.bind(this, name, origin)}
                  key={index} />
           )}
+        </div>
+        <div>
+        {this.state.totalCorrect > 0 ? <h3>You've gotten  {this.state.totalCorrect}  right! Good job!</h3>:null }
         </div>
         {this.props.children}
       </div>
@@ -96,9 +100,20 @@ export default class ExampleContainer extends Component {
       // console.log("Winner winner chicken dinner")
       document.getElementById("goodWork").play();
       this.props.nextSound();
+      this.oneMoreCorrect();
     } else {
       // console.log("I am sad. You made me sad.")
       document.getElementById("tryAgain").play();
     }
+  }
+
+  oneMoreCorrect() {
+    var totalCorrect = this.state.totalCorrect
+    totalCorrect++
+    this.setState({
+      totalCorrect: totalCorrect
+    })
+    console.log("var " + totalCorrect)
+    console.log("state " + this.state.totalCorrect)
   }
 }

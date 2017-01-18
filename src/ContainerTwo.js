@@ -59,7 +59,7 @@ export default class ContainerTwo extends Component {
           )}
         </div>
         <div>
-        <h3>You've gotten  {this.state.totalCorrect}  right! Good job!</h3>
+        {this.state.totalCorrect > 0 ? <h3>You've gotten  {this.state.totalCorrect}  right! Good job!</h3>:null }
         </div>
         {this.props.children}
       </div>
