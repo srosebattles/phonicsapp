@@ -4,6 +4,7 @@ body, html {
 
 .App {
   text-align: center;
+  font-family: "ABeeZee", sans-serif;
 }
 
 .App-logo {
@@ -33,6 +34,7 @@ ul {
 .binAndBoxes {
   display: flex;
   justify-content: center;
+  font-family: "ABeeZee", sans-serif;
 }
 
 .binDiv {
