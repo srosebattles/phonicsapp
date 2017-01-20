@@ -31,15 +31,12 @@ export default class LevelOne extends Component {
   render() {
     return (
       <div>
-        <h1>This is level one</h1>
         <audio id="goodWork">
           <source src="http://phonicsaudiofiles.s3.amazonaws.com/goodwork.mp3" type="audio/mpeg" />
         </audio>
         <audio id="tryAgain">
           <source src="http://phonicsaudiofiles.s3.amazonaws.com/tryagain.mp3" type="audio/mpeg" />
         </audio>
-        <button onClick={this.onChangeSound.bind(this)}>New Sound</button>
-        <br/>
         <AudioPlayer src={this.state.soundLink}></AudioPlayer>
         <br/>
         <ExampleContainer nextSound={this.nextSound.bind(this)} answerShouldBe={this.state.answerShouldBe} />

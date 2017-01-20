@@ -39,16 +39,17 @@ export default class ExampleContainer extends Component {
   render() {
     const { targetbins, boxes } = this.state;
     return (
-      <div>
-        <div style={{ overflow: 'hidden', clear: 'both' }}>
+      <div className="binAndBoxes">
+        <div>
+          <div className="binDiv" style={{ overflow: 'hidden', clear: 'both' }}>
           {targetbins.map(({ accepts, lastDroppedItem }, index) =>
             <TargetBin accepts={accepts}
                      lastDroppedItem={lastDroppedItem}
                      onDrop={(item) => this.handleDrop(index, item)}
                      key={index} />
           )}
-        </div>
-        <div style={{ overflow: 'hidden', clear: 'both' }}>
+          </div>
+          <div style={{ overflow: 'hidden', clear: 'both' }}>
           {boxes.map(({ name, type, origin }, index) =>
             <Box name={name}
                  type={type}
@@ -56,10 +57,12 @@ export default class ExampleContainer extends Component {
                  isDropped={this.isDropped.bind(this, name, origin)}
                  key={index} />
           )}
+          </div>
+          <div>
+          {this.state.totalCorrect > 0 ? <h3>Youve gotten  {this.state.totalCorrect}  right! Good job!</h3>:null }
+          </div>
         </div>
-        <div>
-        {this.state.totalCorrect > 0 ? <h3>You've gotten  {this.state.totalCorrect}  right! Good job!</h3>:null }
-        </div>
+
         {this.props.children}
       </div>
     );
@@ -81,8 +84,6 @@ export default class ExampleContainer extends Component {
         } : {},
         userAnswer: {$set: item.origin}
     }),()=>{
-      // console.log(this.state)
-      // console.log("userAnswer", this.state.userAnswer)
       this.checkIfCorrect();
     });
 
@@ -93,26 +94,29 @@ export default class ExampleContainer extends Component {
   }
 
   checkIfCorrect() {
-    // console.log("guessed " + this.state.userAnswer)
-    // console.log("real answer " + this.state.answerShouldBe)
     if (this.state.userAnswer === this.state.answerShouldBe) {
-      // console.log("Winner winner chicken dinner")
       document.getElementById("goodWork").play();
       this.props.nextSound();
       this.oneMoreCorrect();
+      this.checkTotalCorrect();
     } else {
-      // console.log("I am sad. You made me sad.")
       document.getElementById("tryAgain").play();
     }
   }
 
   oneMoreCorrect() {
-    var totalCorrect = this.state.totalCorrect
+    let totalCorrect = this.state.totalCorrect
     totalCorrect++
     this.setState({
       totalCorrect: totalCorrect
     })
-    console.log("var " + totalCorrect)
-    console.log("state " + this.state.totalCorrect)
   }
+
+  checkTotalCorrect(){
+    if (this.state.totalCorrect = 10) {
+      //replace with appropriate file once recorded
+      document.getElementById("tryAgain").play()
+    }
+  }
+
 }

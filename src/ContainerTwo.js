@@ -108,7 +108,7 @@ export default class ContainerTwo extends Component {
 
 
   oneMoreCorrect() {
-    var totalCorrect = this.state.totalCorrect
+    let totalCorrect = this.state.totalCorrect
     totalCorrect++
     this.setState({
       totalCorrect: totalCorrect
