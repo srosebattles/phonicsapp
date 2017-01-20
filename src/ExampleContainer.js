@@ -98,7 +98,7 @@ export default class ExampleContainer extends Component {
       document.getElementById("goodWork").play();
       this.props.nextSound();
       this.oneMoreCorrect();
-      this.checkTotalCorrect();
+      setTimeout(this.checkTotalCorrect.bind(this), 5000);
     } else {
       document.getElementById("tryAgain").play();
     }
