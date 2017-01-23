@@ -115,7 +115,7 @@ export default class ExampleContainer extends Component {
   checkTotalCorrect(){
     if (this.state.totalCorrect === 9) {
       //replace with appropriate file once recorded
-      document.getElementById("tryAgain").play()
+      this.setTimeout(document.getElementById("tryAgain").play(), 5000)
     }
   }
 
