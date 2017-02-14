@@ -1,10 +1,12 @@
 body, html {
   font-family: "ABeeZee", sans-serif;
+  font-size: 20px;
 }
 
 .App {
   text-align: center;
   font-family: "ABeeZee", sans-serif;
+  display: flex;
 }
 
 .App-logo {

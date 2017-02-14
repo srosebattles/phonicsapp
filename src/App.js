@@ -23,7 +23,9 @@ class App extends Component {
             <li className="navItem"><Link to={'/10'}>Level Ten: AR OR ER</Link></li>
           </ul>
         </div>
+        <div className="interactDiv">
           {this.props.children}
+        </div>
       </div>
     );
   }

@@ -12,7 +12,7 @@ const style = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  fontSize: '10rem',
+  fontSize: '12rem',
   lineHeight: 'normal',
   float: 'left'
 };
