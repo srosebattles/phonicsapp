@@ -98,7 +98,7 @@ export default class ExampleContainer extends Component {
       document.getElementById("goodWork").play();
       this.props.nextSound();
       this.oneMoreCorrect();
-      setTimeout(this.checkTotalCorrect.bind(this), 5000);
+      this.checkTotalCorrect();
     } else {
       document.getElementById("tryAgain").play();
     }
@@ -115,8 +115,21 @@ export default class ExampleContainer extends Component {
   checkTotalCorrect(){
     if (this.state.totalCorrect === 9) {
       //replace with appropriate file once recorded
-      this.setTimeout(document.getElementById("tryAgain").play(), 5000)
-    }
+      setTimeout(function(){document.getElementById("tryAgain").play();
+    console.log("play a file")}, 1000)
+  } else if (this.state.totalCorrect === 19){
+    setTimeout(function(){document.getElementById("tryAgain").play();
+  console.log("play a file")}, 1000)
+  } else if (this.state.totalCorrect === 29){
+    setTimeout(function(){document.getElementById("tryAgain").play();
+  console.log("play a file")}, 1000)
+  } else if (this.state.totalCorrect === 39){
+    setTimeout(function(){document.getElementById("tryAgain").play();
+  console.log("play a file")}, 1000)
+  } else if (this.state.totalCorrect === 49){
+    setTimeout(function(){document.getElementById("tryAgain").play();
+  console.log("play a file")}, 1000)
+  }
   }
 
 }
