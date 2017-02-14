@@ -2,14 +2,17 @@ import React, { PropTypes, Component } from 'react';
 import { DropTarget } from 'react-dnd';
 
 const style = {
-  height: '12rem',
-  width: '12rem',
+  height: '20rem',
+  width: '20rem',
   marginRight: '1.5rem',
   marginBottom: '1.5rem',
   color: 'white',
   padding: '1rem',
   textAlign: 'center',
-  fontSize: '1rem',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  fontSize: '10rem',
   lineHeight: 'normal',
   float: 'left'
 };
