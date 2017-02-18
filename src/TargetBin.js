@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { DropTarget } from 'react-dnd';
 
 const style = {
+  borderRadius: '20px',
   height: '20rem',
   width: '20rem',
   marginRight: '1.5rem',

@@ -19,7 +19,7 @@ class App extends Component {
             <li className="navItem"><Link to={'/6'}>Level Six: A E I O U</Link></li>
             <li className="navItem"><Link to={'/7'}>Level Seven: B D P Q</Link></li>
             <li className="navItem"><Link to={'/8'}>Level Eight: SH CH TH</Link></li>
-            <li className="navItem"><Link to={'/9'}>Level Nine: AI EE IE OO UE</Link></li>
+            <li className="navItem"><Link to={'/9'}>Level Nine: AI EE IE OO OU UE</Link></li>
             <li className="navItem"><Link to={'/10'}>Level Ten: AR OR ER</Link></li>
           </ul>
         </div>

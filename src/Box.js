@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { DragSource } from 'react-dnd';
 
 const style = {
-  border: '1px dashed gray',
+  fontSize: '100px',
+  border: 'none',
   backgroundColor: 'white',
-  padding: '0.5rem 1rem',
+  padding: '1rem 2rem',
   marginRight: '1.5rem',
   marginBottom: '1.5rem',
   cursor: 'move',
-  float: 'left'
+  display: 'inline-flex'
 };
 
 const boxSource = {

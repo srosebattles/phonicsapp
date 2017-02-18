@@ -44,7 +44,26 @@ ul {
   justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.navDiv {
+  margin-right: 5rem;
+}
+
+.nav {
+  padding: 5rem 3rem;
+  border: 1px solid rebeccapurple;
+  border-radius: 20px;
+  background-color: rebeccapurple;
+}
+
+.nav li {
+  background-color: #1560FB;
+  padding: 1rem .5rem;
+  margin: .5rem 0;
+  border: 1px solid #1560FB;
+  border-radius: 50px;
+}
+
+.nav li a {
+  color: whitesmoke;
+  text-decoration: none;
 }

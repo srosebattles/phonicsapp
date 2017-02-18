@@ -20,9 +20,14 @@ export default class AudioPlayer extends Component {
   render() {
     return (
       <div>
-        <audio controls>
-          <source src={this.props.src} />
-        </audio>
+
+        <button>
+          <audio controls>
+            <source src={this.props.src} />
+          </audio>
+          ▸
+        </button>
+
       </div>
     );
   }
