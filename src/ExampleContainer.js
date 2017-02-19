@@ -100,7 +100,7 @@ export default class ExampleContainer extends Component {
       this.oneMoreCorrect();
       this.checkTotalCorrect();
       setTimeout(function(){document.getElementById("phoneme").play();
-       console.log("play sound")}, 1500)
+       console.log("play sound")}, 2000)
     } else {
       document.getElementById("tryAgain").play();
       setTimeout(function(){document.getElementById("phoneme").play();
