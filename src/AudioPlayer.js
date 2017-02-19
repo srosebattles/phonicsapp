@@ -22,7 +22,7 @@ export default class AudioPlayer extends Component {
       <div>
 
         <button>
-          <audio controls>
+          <audio id="phoneme" controls>
             <source src={this.props.src} />
           </audio>
           ▸

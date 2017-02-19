@@ -101,6 +101,8 @@ export default class ExampleContainer extends Component {
       this.checkTotalCorrect();
     } else {
       document.getElementById("tryAgain").play();
+      setTimeout(function(){document.getElementById("phoneme").play();
+       console.log("play sound")}, 900)
     }
   }
 
