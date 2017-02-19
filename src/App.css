@@ -45,14 +45,15 @@ ul {
 }
 
 .navDiv {
-  margin-right: 5rem;
+  margin-right: 4rem;
 }
 
 .nav {
-  padding: 5rem 3rem;
+  padding: 3rem 3rem 5rem 3rem;
   border: 1px solid rebeccapurple;
   border-radius: 20px;
   background-color: rebeccapurple;
+  color: whitesmoke;
 }
 
 .nav li {
