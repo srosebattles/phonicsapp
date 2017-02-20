@@ -19,14 +19,17 @@ export default class AudioPlayer extends Component {
   }
 
   onClick() {
-    console.log("HI YOU CLICKED ME")
+    document.getElementById("phoneme").play()
   }
 
   render() {
     return (
       <div>
-
-          <audio id="phoneme" controls>
+          <button onClick={this.onClick}>
+          PURPLE
+          </button>
+          
+          <audio id="phoneme">
             <source src={this.props.src} />
           </audio>
 
