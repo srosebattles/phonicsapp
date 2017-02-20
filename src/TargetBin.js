@@ -15,7 +15,8 @@ const style = {
   alignItems: 'center',
   fontSize: '12rem',
   lineHeight: 'normal',
-  float: 'left'
+  float: 'left',
+  backgroundColor: '#6115fb',
 };
 
 const binTarget = {
@@ -46,11 +47,11 @@ export default class TargetBin extends Component {
     const { isOver, canDrop, connectDropTarget, lastDroppedItem } = this.props;
     const isActive = isOver && canDrop;
 
-    let backgroundColor = '#222';
+    let backgroundColor = '#15fbae';
     if (isActive) {
-      backgroundColor = 'darkgreen';
+      backgroundColor = '#1560FB';
     } else if (canDrop) {
-      backgroundColor = 'darkkhaki';
+      backgroundColor = '#1560FB';
     }
 
     return connectDropTarget(

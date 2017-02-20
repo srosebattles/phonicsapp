@@ -17,10 +17,10 @@ export default class ContainerTwo extends Component {
       ],
       boxes: [
         { name: 'n', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundN.mp3'},
-        { name: 'ck', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundCK.mp3' },
+        { name: 'ck', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundCK2.mp3' },
         { name: 'h', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundH.mp3' },
         { name: 'r', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3'},
-        { name: 'e', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/shortE.mp3'},
+        { name: 'e', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/shortE2.mp3'},
       ],
       droppedBoxNames: [],
       answerShouldBe: 'http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3',

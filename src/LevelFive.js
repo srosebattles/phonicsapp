@@ -10,7 +10,7 @@ export default class LevelFive extends Component {
     this.state = {
       soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundV.mp3",
       answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/soundV.mp3",
-      chosenSound: uniqueRandomArray(["soundW.mp3", "soundV.mp3", "soundY.mp3", "soundX.mp3"])
+      chosenSound: uniqueRandomArray(["soundW.mp3", "soundV.mp3", "soundY.mp3", "soundX.mp3", "soundQ2.mp3"])
     }
   }
 //Check Q

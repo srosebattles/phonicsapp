@@ -9,7 +9,8 @@ const style = {
   marginRight: '1.5rem',
   marginBottom: '1.5rem',
   cursor: 'move',
-  display: 'inline-flex'
+  display: 'inline-flex',
+  color: '#6115fb'
 };
 
 const boxSource = {

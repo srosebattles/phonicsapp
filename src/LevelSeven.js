@@ -10,7 +10,7 @@ export default class LevelSeven extends Component {
     this.state = {
       soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundD.mp3",
       answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/soundD.mp3",
-      chosenSound: uniqueRandomArray(["soundD.mp3", "soundP.mp3"])
+      chosenSound: uniqueRandomArray(["soundD2.mp3", "soundP.mp3", "soundB2.mp3", "soundQ2.mp3"])
     }
   }
 

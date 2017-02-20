@@ -10,7 +10,7 @@ export default class LevelTwo extends Component {
     this.state = {
       soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3",
       answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/soundR.mp3",
-      chosenSound: uniqueRandomArray(["soundR.mp3", "soundH.mp3", "soundN.mp3"])
+      chosenSound: uniqueRandomArray(["soundR.mp3", "soundH.mp3", "soundN.mp3", "soundCK2.mp3", "shortE2.mp3"])
     }
   }
 

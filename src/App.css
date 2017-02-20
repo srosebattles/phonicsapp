@@ -50,21 +50,22 @@ ul {
 
 .nav {
   padding: 3rem 3rem 5rem 3rem;
-  border: 1px solid rebeccapurple;
+  border: 1px solid #6115fb;
   border-radius: 20px;
-  background-color: rebeccapurple;
+  background-color: #6115fb;
   color: whitesmoke;
 }
 
 .nav li {
-  background-color: #1560FB;
+  background-color: whitesmoke;
   padding: 1rem .5rem;
   margin: .5rem 0;
-  border: 1px solid #1560FB;
+  border: 1px solid whitesmoke;
   border-radius: 50px;
+  color: #6115fb;
 }
 
 .nav li a {
-  color: whitesmoke;
+  color: #6115fb;
   text-decoration: none;
 }
