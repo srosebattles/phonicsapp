@@ -21,7 +21,7 @@ export default class ExampleContainer extends Component {
         { name: 'ie', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundIE.mp3'},
         { name: 'ue', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundUE.mp3'},
         { name: 'ou', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundOU.mp3'},
-        { name: 'oo', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundOOcool.mp3' || 'http://phonicsaudiofiles.s3.amazonaws.com/soundOOgood.mp3'},
+        { name: 'oo', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundOOcool.mp3'},
       ],
       droppedBoxNames: [],
       answerShouldBe: 'http://phonicsaudiofiles.s3.amazonaws.com/soundAI.mp3',
@@ -95,6 +95,7 @@ export default class ExampleContainer extends Component {
   }
 
   checkIfCorrect() {
+
     if (this.state.userAnswer === this.state.answerShouldBe) {
       document.getElementById("goodWork").play();
       this.props.nextSound();

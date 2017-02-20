@@ -31,6 +31,9 @@ export default class LevelOne extends Component {
   render() {
     return (
       <div>
+        <audio autoplay="autoplay" id="directions">
+          <source src="http://phonicsaudiofiles.s3.amazonaws.com/PhonicsAppDirections.mp3" type="audio/mpeg" />
+        </audio>
         <audio id="goodWork">
           <source src="http://phonicsaudiofiles.s3.amazonaws.com/goodwork.mp3" type="audio/mpeg" />
         </audio>
