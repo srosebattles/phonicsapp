@@ -31,7 +31,6 @@ export default class ExampleContainer extends Component {
   }
 
   componentWillReceiveProps(newProps){
-    console.log(newProps)
     this.setState({
       answerShouldBe: newProps.answerShouldBe
     })
@@ -115,17 +114,21 @@ export default class ExampleContainer extends Component {
   }
 
   checkTotalCorrect(){
-    if (this.state.totalCorrect === 9) {
+  if (this.state.totalCorrect === 9) {
       setTimeout(function(){document.getElementById("tenRight").play();}, 1000)
-  } else if (this.state.totalCorrect === 19){
+      setTimeout(function(){document.getElementById("phoneme").play();}, 3000)
+   } else if (this.state.totalCorrect === 19){
     setTimeout(function(){document.getElementById("twentyRight").play();}, 1000)
-  } else if (this.state.totalCorrect === 29){
+    setTimeout(function(){document.getElementById("phoneme").play();}, 4500)
+   } else if (this.state.totalCorrect === 29){
     setTimeout(function(){document.getElementById("thirtyRight").play();}, 1000)
-  } else if (this.state.totalCorrect === 39){
+    setTimeout(function(){document.getElementById("phoneme").play();}, 3000)
+   } else if (this.state.totalCorrect === 39){
     setTimeout(function(){document.getElementById("fortyRight").play();}, 1000)
-  } else if (this.state.totalCorrect === 49){
+    setTimeout(function(){document.getElementById("phoneme").play();}, 4500)
+   } else if (this.state.totalCorrect === 49){
     setTimeout(function(){document.getElementById("fiftyRight").play();}, 1000)
+    setTimeout(function(){document.getElementById("phoneme").play();}, 5500)
+   }
   }
-  }
-
 }
