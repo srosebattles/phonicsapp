@@ -69,7 +69,6 @@ export default class ExampleContainer extends Component {
 
   handleDrop(index, item) {
     const { name, origin } = item;
-    // console.log(item.name, item.origin)
     this.setState(update(this.state,{
        targetbins: {
          [index]: {

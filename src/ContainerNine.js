@@ -70,7 +70,6 @@ export default class ExampleContainer extends Component {
 
   handleDrop(index, item) {
     const { name, origin } = item;
-    // console.log(item.name, item.origin)
     this.setState(update(this.state,{
        targetbins: {
          [index]: {
@@ -94,14 +93,22 @@ export default class ExampleContainer extends Component {
   }
 
   checkIfCorrect() {
-
     if (this.state.userAnswer === this.state.answerShouldBe) {
       document.getElementById("goodWork").play();
       this.props.nextSound();
       this.oneMoreCorrect();
+      this.playPhoneme();
       this.checkTotalCorrect();
     } else {
       document.getElementById("tryAgain").play();
+      setTimeout(function(){document.getElementById("phoneme").play();
+      }, 900)
+    }
+  }
+
+  playPhoneme() {
+    if (this.state.totalCorrect !== 9 && this.state.totalCorrect !== 19 && this.state.totalCorrect !== 29 && this.state.totalCorrect !== 39 && this.state.totalCorrect !== 49) {
+     setTimeout(function(){document.getElementById("phoneme").play();}, 1200)
     }
   }
 
