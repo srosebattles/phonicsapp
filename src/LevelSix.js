@@ -10,16 +10,15 @@ export default class LevelSix extends Component {
     this.state = {
       soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3",
       answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/shortA.mp3",
-      chosenSound: uniqueRandomArray(["shortA.mp3", "shortI.mp3", "shortO.mp3","shortU.mp3"])
+      chosenSound: uniqueRandomArray(["shortA.mp3", "shortI.mp3", "shortO.mp3","shortU.mp3", "shortE2.mp3"])
     }
   }
-  //Add E
+
   onChangeSound(e) {
     this.nextSound()
   }
 
   nextSound(){
-    // console.log("loading next sound")
     var thisSound = this.state.chosenSound()
      console.log(thisSound)
     this.setState({
@@ -31,7 +30,6 @@ export default class LevelSix extends Component {
   render() {
     return (
       <div>
-        <h1>This is level six</h1>
         <audio id="goodWork">
           <source src="http://phonicsaudiofiles.s3.amazonaws.com/goodwork.mp3" type="audio/mpeg" />
         </audio>

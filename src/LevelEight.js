@@ -19,7 +19,6 @@ export default class LevelEight extends Component {
   }
 
   nextSound(){
-    // console.log("loading next sound")
     var thisSound = this.state.chosenSound()
      console.log(thisSound)
     this.setState({
@@ -31,7 +30,6 @@ export default class LevelEight extends Component {
   render() {
     return (
       <div>
-        <h1>This is level eight</h1>
         <audio id="goodWork">
           <source src="http://phonicsaudiofiles.s3.amazonaws.com/goodwork.mp3" type="audio/mpeg" />
         </audio>

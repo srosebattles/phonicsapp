@@ -31,7 +31,6 @@ export default class LevelTwo extends Component {
   render() {
     return (
       <div>
-        <h1>This is level two</h1>
         <audio id="goodWork">
           <source src="http://phonicsaudiofiles.s3.amazonaws.com/goodwork.mp3" type="audio/mpeg" />
         </audio>

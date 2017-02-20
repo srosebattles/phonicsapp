@@ -10,16 +10,15 @@ export default class LevelFour extends Component {
     this.state = {
       soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundL.mp3",
       answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/soundL.mp3",
-      chosenSound: uniqueRandomArray(["soundL.mp3", "soundF.mp3", "soundJ.mp3","soundZ.mp3"])
+      chosenSound: uniqueRandomArray(["soundL.mp3", "soundF.mp3", "soundJ.mp3","soundZ.mp3", "soundB2.mp3"])
     }
   }
-//Need to record B again
+
   onChangeSound(e) {
     this.nextSound()
   }
 
   nextSound(){
-    // console.log("loading next sound")
     var thisSound = this.state.chosenSound()
      console.log(thisSound)
     this.setState({
@@ -31,7 +30,6 @@ export default class LevelFour extends Component {
   render() {
     return (
       <div>
-        <h1>This is level four</h1>
         <audio id="goodWork">
           <source src="http://phonicsaudiofiles.s3.amazonaws.com/goodwork.mp3" type="audio/mpeg" />
         </audio>
