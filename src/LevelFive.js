@@ -13,13 +13,13 @@ export default class LevelFive extends Component {
       chosenSound: uniqueRandomArray(["soundW.mp3", "soundV.mp3", "soundY.mp3", "soundX.mp3", "soundQ2.mp3"])
     }
   }
-//Check Q
+
   onChangeSound(e) {
     this.nextSound()
   }
 
   nextSound(){
-    // console.log("loading next sound")
+
     var thisSound = this.state.chosenSound()
      console.log(thisSound)
     this.setState({
@@ -37,8 +37,6 @@ export default class LevelFive extends Component {
         <audio id="tryAgain">
           <source src="http://phonicsaudiofiles.s3.amazonaws.com/tryagain.mp3" type="audio/mpeg" />
         </audio>
-        <button onClick={this.onChangeSound.bind(this)}>New Sound</button>
-        <br/>
         <AudioPlayer src={this.state.soundLink}></AudioPlayer>
         <br/>
         <ContainerTwo nextSound={this.nextSound.bind(this)} answerShouldBe={this.state.answerShouldBe} />

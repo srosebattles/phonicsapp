@@ -10,7 +10,7 @@ export default class LevelThree extends Component {
     this.state = {
       soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundM.mp3",
       answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/soundM.mp3",
-      chosenSound: uniqueRandomArray(["soundM.mp3","soundD.mp3", "hardG.mp3", "shortO.mp3", "shortU.mp3"])
+      chosenSound: uniqueRandomArray(["soundM.mp3","soundD2.mp3", "hardG.mp3", "shortO.mp3", "shortU.mp3"])
     }
   }
 
@@ -19,7 +19,6 @@ export default class LevelThree extends Component {
   }
 
   nextSound(){
-    // console.log("loading next sound")
     var thisSound = this.state.chosenSound()
      console.log(thisSound)
     this.setState({
@@ -37,8 +36,6 @@ export default class LevelThree extends Component {
         <audio id="tryAgain">
           <source src="http://phonicsaudiofiles.s3.amazonaws.com/tryagain.mp3" type="audio/mpeg" />
         </audio>
-        <button onClick={this.onChangeSound.bind(this)}>New Sound</button>
-        <br/>
         <AudioPlayer src={this.state.soundLink}></AudioPlayer>
         <br/>
         <ContainerTwo nextSound={this.nextSound.bind(this)} answerShouldBe={this.state.answerShouldBe} />

@@ -36,8 +36,6 @@ export default class LevelSix extends Component {
         <audio id="tryAgain">
           <source src="http://phonicsaudiofiles.s3.amazonaws.com/tryagain.mp3" type="audio/mpeg" />
         </audio>
-        <button onClick={this.onChangeSound.bind(this)}>New Sound</button>
-        <br/>
         <AudioPlayer src={this.state.soundLink}></AudioPlayer>
         <br/>
         <ContainerTwo nextSound={this.nextSound.bind(this)} answerShouldBe={this.state.answerShouldBe} />

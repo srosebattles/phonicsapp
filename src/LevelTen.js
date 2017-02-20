@@ -10,7 +10,7 @@ export default class LevelTen extends Component {
     this.state = {
       soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundAR.mp3",
       answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/soundAR.mp3",
-      chosenSound: uniqueRandomArray(["soundAR.mp3", "soundOR.mp3", "soundER.mp3"])
+      chosenSound: uniqueRandomArray(["soundAR.mp3", "soundOR2.mp3", "soundER.mp3"])
     }
   }
 
@@ -19,7 +19,6 @@ export default class LevelTen extends Component {
   }
 
   nextSound(){
-    // console.log("loading next sound")
     var thisSound = this.state.chosenSound()
      console.log(thisSound)
     this.setState({
@@ -37,10 +36,8 @@ export default class LevelTen extends Component {
         <audio id="tryAgain">
           <source src="http://phonicsaudiofiles.s3.amazonaws.com/tryagain.mp3" type="audio/mpeg" />
         </audio>
-        <button onClick={this.onChangeSound.bind(this)}>New Sound</button>
-        <br/>
         <AudioPlayer src={this.state.soundLink}></AudioPlayer>
-        <br/>
+        <br />
         <ContainerTwo nextSound={this.nextSound.bind(this)} answerShouldBe={this.state.answerShouldBe} />
       </div>
     );
