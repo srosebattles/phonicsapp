@@ -14,6 +14,10 @@ export default class LevelOne extends Component {
     }
   }
 
+  componentDidMount(){
+    document.getElementById("directions").play();
+  }
+
   onChangeSound(e) {
     this.nextSound()
   }
