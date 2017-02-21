@@ -25,10 +25,8 @@ export default class AudioPlayer extends Component {
   render() {
     return (
       <div>
-          <button onClick={this.onClick}>
-          PURPLE
-          </button>
-          
+          <i className="fa fa-play" aria-hidden="true" onClick={this.onClick}></i>
+
           <audio id="phoneme">
             <source src={this.props.src} />
           </audio>

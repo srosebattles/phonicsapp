@@ -69,3 +69,8 @@ ul {
   color: #6115fb;
   text-decoration: none;
 }
+
+.fa-play {
+  font-size: 100px;
+  margin: 1.3rem 0;
+}
