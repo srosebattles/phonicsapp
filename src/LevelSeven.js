@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import AudioPlayer from './AudioPlayer.js';
-import ContainerTwo from './ContainerTwo';
+import ContainerSeven from './ContainerSeven';
 var uniqueRandomArray = require('unique-random-array');
 
 export default class LevelSeven extends Component {
   constructor() {
     super();
     this.state = {
-      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundD.mp3",
-      answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/soundD.mp3",
+      soundLink: "http://phonicsaudiofiles.s3.amazonaws.com/soundD2.mp3",
+      answerShouldBe: "http://phonicsaudiofiles.s3.amazonaws.com/soundD2.mp3",
       chosenSound: uniqueRandomArray(["soundD2.mp3", "soundP.mp3", "soundB2.mp3", "soundQ2.mp3"])
     }
   }
@@ -53,7 +53,7 @@ export default class LevelSeven extends Component {
         </audio>
         <AudioPlayer src={this.state.soundLink}></AudioPlayer>
         <br/>
-        <ContainerTwo nextSound={this.nextSound.bind(this)} answerShouldBe={this.state.answerShouldBe} />
+        <ContainerSeven nextSound={this.nextSound.bind(this)} answerShouldBe={this.state.answerShouldBe} />
       </div>
     );
   }

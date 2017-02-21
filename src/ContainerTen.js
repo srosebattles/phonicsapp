@@ -18,7 +18,7 @@ export default class ContainerTen extends Component {
       boxes: [
         { name: 'ar', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundAR.mp3' },
         { name: 'er', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundER.mp3' },
-        { name: 'or', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundOR.mp3'},
+        { name: 'or', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundOR2.mp3'},
       ],
       droppedBoxNames: [],
       answerShouldBe: 'http://phonicsaudiofiles.s3.amazonaws.com/soundAR.mp3',
