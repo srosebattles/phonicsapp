@@ -22,7 +22,7 @@ export default class ContainerEight extends Component {
         { name: 'th', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/softTH.mp3'},
       ],
       droppedBoxNames: [],
-      answerShouldBe: 'http://phonicsaudiofiles.s3.amazonaws.com/soundSH.mp3',
+      answerShouldBe: 'http://phonicsaudiofiles.s3.amazonaws.com/hardTH.mp3',
       userAnswer: '',
       totalCorrect: 0
     };
