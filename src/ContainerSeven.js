@@ -22,7 +22,7 @@ export default class ContainerSeven extends Component {
         { name: 'q', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundQ2.mp3' },
       ],
       droppedBoxNames: [],
-      answerShouldBe: 'http://phonicsaudiofiles.s3.amazonaws.com/soundB.mp3',
+      answerShouldBe: 'http://phonicsaudiofiles.s3.amazonaws.com/soundD2.mp3',
       userAnswer: '',
       totalCorrect: 0
     };
