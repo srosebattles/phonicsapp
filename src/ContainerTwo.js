@@ -39,16 +39,17 @@ export default class ContainerTwo extends Component {
   render() {
     const { targetbins, boxes } = this.state;
     return (
-      <div>
-        <div style={{ overflow: 'hidden', clear: 'both' }}>
+      <div className="binAndBoxes">
+        <div>
+          <div className="binDiv" style={{ overflow: 'hidden', clear: 'both' }}>
           {targetbins.map(({ accepts, lastDroppedItem }, index) =>
             <TargetBin accepts={accepts}
                      lastDroppedItem={lastDroppedItem}
                      onDrop={(item) => this.handleDrop(index, item)}
                      key={index} />
           )}
-        </div>
-        <div style={{ overflow: 'hidden', clear: 'both' }}>
+          </div>
+          <div style={{ overflow: 'hidden', clear: 'both' }}>
           {boxes.map(({ name, type, origin }, index) =>
             <Box name={name}
                  type={type}
@@ -56,10 +57,12 @@ export default class ContainerTwo extends Component {
                  isDropped={this.isDropped.bind(this, name, origin)}
                  key={index} />
           )}
+          </div>
+          <div>
+          {this.state.totalCorrect > 0 ? <h3>Youve gotten  {this.state.totalCorrect}  right! Good job!</h3>:null }
+          </div>
         </div>
-        <div>
-        {this.state.totalCorrect > 0 ? <h3>You've gotten  {this.state.totalCorrect}  right! Good job!</h3>:null }
-        </div>
+
         {this.props.children}
       </div>
     );
@@ -67,7 +70,6 @@ export default class ContainerTwo extends Component {
 
   handleDrop(index, item) {
     const { name, origin } = item;
-    // console.log(item.name, item.origin)
     this.setState(update(this.state,{
        targetbins: {
          [index]: {
@@ -81,8 +83,6 @@ export default class ContainerTwo extends Component {
         } : {},
         userAnswer: {$set: item.origin}
     }),()=>{
-      // console.log(this.state)
-      // console.log("userAnswer", this.state.userAnswer)
       this.checkIfCorrect();
     });
 
@@ -93,19 +93,24 @@ export default class ContainerTwo extends Component {
   }
 
   checkIfCorrect() {
-    // console.log("guessed " + this.state.userAnswer)
-    // console.log("real answer " + this.state.answerShouldBe)
     if (this.state.userAnswer === this.state.answerShouldBe) {
-      // console.log("Winner winner chicken dinner")
       document.getElementById("goodWork").play();
       this.props.nextSound();
       this.oneMoreCorrect();
+      this.playPhoneme();
+      this.checkTotalCorrect();
     } else {
-      // console.log("I am sad. You made me sad.")
       document.getElementById("tryAgain").play();
+      setTimeout(function(){document.getElementById("phoneme").play();
+      }, 900)
     }
   }
 
+  playPhoneme() {
+    if (this.state.totalCorrect !== 9 && this.state.totalCorrect !== 19 && this.state.totalCorrect !== 29 && this.state.totalCorrect !== 39 && this.state.totalCorrect !== 49) {
+     setTimeout(function(){document.getElementById("phoneme").play();}, 1200)
+    }
+  }
 
   oneMoreCorrect() {
     let totalCorrect = this.state.totalCorrect
@@ -113,7 +118,25 @@ export default class ContainerTwo extends Component {
     this.setState({
       totalCorrect: totalCorrect
     })
-    console.log("var " + totalCorrect)
-    console.log("state " + this.state.totalCorrect)
   }
+
+  checkTotalCorrect(){
+  if (this.state.totalCorrect === 9) {
+      setTimeout(function(){document.getElementById("tenRight").play();}, 1000)
+      setTimeout(function(){document.getElementById("phoneme").play();}, 3000)
+   } else if (this.state.totalCorrect === 19){
+    setTimeout(function(){document.getElementById("twentyRight").play();}, 1000)
+    setTimeout(function(){document.getElementById("phoneme").play();}, 4500)
+   } else if (this.state.totalCorrect === 29){
+    setTimeout(function(){document.getElementById("thirtyRight").play();}, 1000)
+    setTimeout(function(){document.getElementById("phoneme").play();}, 3000)
+   } else if (this.state.totalCorrect === 39){
+    setTimeout(function(){document.getElementById("fortyRight").play();}, 1000)
+    setTimeout(function(){document.getElementById("phoneme").play();}, 4500)
+   } else if (this.state.totalCorrect === 49){
+    setTimeout(function(){document.getElementById("fiftyRight").play();}, 1000)
+    setTimeout(function(){document.getElementById("phoneme").play();}, 5500)
+   }
+  }
+
 }
