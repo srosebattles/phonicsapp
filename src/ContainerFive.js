@@ -23,7 +23,7 @@ export default class ContainerFive extends Component {
         { name: 'x', type: ItemTypes.BOX, origin: 'http://phonicsaudiofiles.s3.amazonaws.com/soundX.mp3'},
       ],
       droppedBoxNames: [],
-      answerShouldBe: 'http://phonicsaudiofiles.s3.amazonaws.com/soundW.mp3',
+      answerShouldBe: 'http://phonicsaudiofiles.s3.amazonaws.com/soundV.mp3',
       userAnswer: '',
       totalCorrect: 0
     };
