@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import AudioPlayer from './AudioPlayer.js';
-import ContainerTwo from './ContainerTwo';
+import ContainerFour from './ContainerFour';
 var uniqueRandomArray = require('unique-random-array');
 
 export default class LevelFour extends Component {
@@ -53,7 +53,7 @@ export default class LevelFour extends Component {
         </audio>
         <AudioPlayer src={this.state.soundLink}></AudioPlayer>
         <br/>
-        <ContainerTwo nextSound={this.nextSound.bind(this)} answerShouldBe={this.state.answerShouldBe} />
+        <ContainerFour nextSound={this.nextSound.bind(this)} answerShouldBe={this.state.answerShouldBe} />
       </div>
     );
   }
