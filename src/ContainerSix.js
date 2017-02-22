@@ -58,7 +58,7 @@ export default class ContainerSix extends Component {
           )}
           </div>
           <div>
-          {this.state.totalCorrect > 0 ? <h3>Youve gotten  {this.state.totalCorrect}  right! Good job!</h3>:null }
+          {this.state.totalCorrect > 0 ? <h3>You've gotten  {this.state.totalCorrect}  right! Good job!</h3>:null }
           </div>
         </div>
 
