@@ -4,7 +4,7 @@ import { DragSource } from 'react-dnd';
 const style = {
   fontSize: '100px',
   border: 'none',
-  backgroundColor: 'white',
+  backgroundColor: 'whitesmoke',
   padding: '1rem 2rem',
   marginRight: '1.5rem',
   marginBottom: '1.5rem',

@@ -3,11 +3,11 @@ import { DropTarget } from 'react-dnd';
 
 const style = {
   borderRadius: '20px',
-  height: '20rem',
-  width: '20rem',
-  marginRight: '1.5rem',
-  marginBottom: '1.5rem',
-  color: 'white',
+  height: '15rem',
+  width: '16rem',
+  marginRight: '2rem',
+  marginBottom: '2rem',
+  color: 'whitesmoke',
   padding: '1rem',
   textAlign: 'center',
   display: 'flex',

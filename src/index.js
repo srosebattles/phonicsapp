@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, IndexRoute, Route, browserHistory} from 'react-router';
+import {Router, IndexRoute, Route, browserHistory, hashHistory} from 'react-router';
 import App from './App';
 import NoMatch from './NoMatch';
 import LevelOne from './LevelOne';
@@ -17,7 +17,7 @@ import LevelTen from './LevelTen';
 import './index.css';
 
 ReactDOM.render(
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route path="/" component={App} >,
       <IndexRoute component={LevelOne} />
       <Route path="1" component={LevelOne} />
